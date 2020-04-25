@@ -1,7 +1,7 @@
 namespace RoleplayGame
 {
     // Interfaz IAttack implementada por todos los Items que contengan un valor de ataque.
-    public class IAttack
+    public interface IAttack
     {
         int AttackValue
         {
