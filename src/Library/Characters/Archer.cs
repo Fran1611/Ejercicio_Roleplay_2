@@ -1,6 +1,11 @@
 namespace RoleplayGame
 {
-    public class Archer
+    //Agrego las otras dos interfaces porque hay metodos que los personajes usan
+
+    //IAttack -----> AttackValue
+    //IDefensa ------> DefenceValue
+    //ICharacter ------->  ReciveAttack(int a), Cure(), ademas los name y health get y set 
+    public class Archer : ICharacter, IDefensa, IAttack
     {
         private int health = 100;
 
@@ -15,7 +20,7 @@ namespace RoleplayGame
 
         public Helmet Helmet { get; set; }
 
-        public int AttackValue
+        public int IAttack.AttackValue
         {
             get
             {
@@ -23,7 +28,7 @@ namespace RoleplayGame
             }
         }
 
-        public int DefenseValue
+        public int IDefensa.DefenseValue
         {
             get
             {
