@@ -6,7 +6,8 @@ namespace RoleplayGame
     {
         string Name {get; set; }
         int Health {get; private set; }
-
+        int AttackValue {get;} 
+        int DefenseValue {get;} 
         void ReciveAttack(int a);
         void Cure();
     }
