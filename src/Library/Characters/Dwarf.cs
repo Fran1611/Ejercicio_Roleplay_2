@@ -1,11 +1,6 @@
 namespace RoleplayGame
 {
-    //Agrego las otras dos interfaces porque hay metodos que los personajes usan
-
-    //IAttack -----> AttackValue
-    //IDefensa ------> DefenceValue
-    //ICharacter ------->  ReciveAttack(int a), Cure(), ademas los name y health get y set 
-    public class Dwarf : ICharacter, IAttack, IDefensa
+    public class Dwarf : ICharacter
     {
         private int health = 100;
 
