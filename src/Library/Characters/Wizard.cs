@@ -20,7 +20,7 @@ namespace RoleplayGame
 
         public Staff Staff { get; set; }
 
-        public int IAttack.AttackValue
+        public int AttackValue
         {
             get
             {
@@ -28,7 +28,7 @@ namespace RoleplayGame
             }
         }
 
-        public int IDefensa.DefenseValue
+        public int DefenseValue
         {
             get
             {
