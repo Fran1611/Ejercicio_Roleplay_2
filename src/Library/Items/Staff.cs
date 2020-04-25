@@ -1,6 +1,8 @@
 namespace RoleplayGame
 {
-    public class Staff :IDefensa
+
+    public class Staff :IDefensa :IAttack
+
     {
         public int AttackValue 
         {

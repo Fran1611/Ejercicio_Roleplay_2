@@ -1,6 +1,8 @@
 namespace RoleplayGame
 {
-    public class Spell :IDefensa
+
+    public class Spell :IDefensa :IAttack
+
     {
         public int AttackValue
         {
