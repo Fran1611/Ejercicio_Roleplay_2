@@ -1,8 +1,7 @@
-using System;
 namespace RoleplayGame
 {
-    interface IDefensa
+    public interface IDefensa
     {
-        int DefenseValueget{get;}
+        int DefenseValue{get;}
     }
 }
