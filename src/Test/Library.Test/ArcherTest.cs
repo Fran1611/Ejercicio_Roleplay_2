@@ -16,28 +16,6 @@ namespace Library.Test
         }
 
         [Test]
-        public void Archer_Name_ShouldReturnName()
-        {
-            Assert.AreEqual(daniel.Name, "Daniel");
-        }
-
-        [Test]
-        public void AttackValue_Element_ElementValue()
-        {
-            daniel.Bow = new Bow();
-            Bow actual = daniel.Bow;
-            Assert.AreEqual(actual.AttackValue, 15);
-        }
-
-        [Test]
-        public void DefenseValue_Element_ElementValue()
-        {
-            daniel.Helmet = new Helmet();
-            Helmet actual = daniel.Helmet;
-            Assert.AreEqual(actual.DefenseValue, 18);
-        }
-
-        [Test]
         public void Health_IntOverCero_Health()
         {
             int actual = daniel.Health;
