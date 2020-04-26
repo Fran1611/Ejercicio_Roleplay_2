@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using RoleplayGame;
 
 namespace Library.Test
 {
@@ -13,7 +14,7 @@ namespace Library.Test
         [Test]
         public void AxeAttackValue_ExpectedValue()
         {   
-            RoleplayGame.Axe axe = new RoleplayGame.Axe();
+            Axe axe = new Axe();
             int axeAttack = axe.AttackValue;
             int expected = 25;
             Assert.AreEqual(expected,axeAttack);

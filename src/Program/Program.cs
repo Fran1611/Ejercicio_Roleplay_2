@@ -28,6 +28,7 @@ namespace Program
             gimli.Cure();
 
             Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+
         }
     }
 }

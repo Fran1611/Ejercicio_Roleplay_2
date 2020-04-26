@@ -1,5 +1,5 @@
 using NUnit.Framework;
-
+using RoleplayGame;
 namespace Library.Test
 {
     public class SpellTest
@@ -13,7 +13,7 @@ namespace Library.Test
         [Test]
         public void SpellAttackValue_ExpectedValue()
         {   
-            RoleplayGame.Spell spell = new RoleplayGame.Spell();
+            Spell spell = new Spell();
             int spellAttack = spell.AttackValue;
             int expected = 70;
             Assert.AreEqual(expected,spellAttack);
@@ -22,7 +22,7 @@ namespace Library.Test
         [Test]
         public void SpellDefenseValue_ExpectedValue()
         {   
-            RoleplayGame.Spell spell = new RoleplayGame.Spell();
+            Spell spell = new Spell();
             int spellDefense = spell.DefenseValue;
             int expected = 70;
             Assert.AreEqual(expected,spellDefense);

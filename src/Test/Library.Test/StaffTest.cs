@@ -1,5 +1,5 @@
 using NUnit.Framework;
-
+using RoleplayGame;
 namespace Library.Test
 {
     public class StaffTest
@@ -13,7 +13,7 @@ namespace Library.Test
           [Test]
          public void StaffAttackValue_ExpectedValue()
         {   
-            RoleplayGame.Staff staff = new RoleplayGame.Staff();
+            Staff staff = new Staff();
             int staffAttack = staff.AttackValue;
             int expected = 100;
             Assert.AreEqual(expected,staffAttack);
@@ -22,7 +22,7 @@ namespace Library.Test
         [Test]
          public void StaffDefenseValue_ExpectedValue()
         {   
-            RoleplayGame.Staff staff = new RoleplayGame.Staff();
+            Staff staff = new Staff();
             int staffDefense = staff.DefenseValue;
             int expected = 100;
             Assert.AreEqual(expected,staffDefense);
