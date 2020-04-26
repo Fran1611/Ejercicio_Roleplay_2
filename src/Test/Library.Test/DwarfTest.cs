@@ -84,5 +84,16 @@ namespace Library.Test
             expected.Add(25);
             Assert.AreEqual(personaje,expected);
         }
+
+        // Verifica que el valor de ataque del Dwarf es igual a la suma de valores de ataque de Shield y Helmet.
+        [Test]
+        public void DefenseValue_test()
+        {
+            Shield enanoShield = new Shield();
+            Helmet enanoHelmet= new Helmet();
+            int expected = (enanoHelmet.DefenseValue + enanoShield.DefenseValue);
+            int actual = enano.DefenseValue;
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
