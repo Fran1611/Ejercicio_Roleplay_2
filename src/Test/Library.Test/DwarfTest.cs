@@ -67,6 +67,16 @@ namespace Library.Test
             int actual = enano.Health;
             Assert.AreEqual(expected,actual);
         }
+        
+        [Test]
+        // Verifica que si el Dwarf tiene vida, al curarse su valor maximo de vida sigue siendo 100.
+        public void Cure_Test3()
+        {
+            enano.Cure();
+            int expected = 100;
+            int actual = enano.Health;
+            Assert.AreEqual(expected,actual);
+        }
 
         [Test]
         // Verifica que el Dwarf se crea de forma correcta, es decir que sus valores de ataque, defensa, vida y nombre son correctos.
