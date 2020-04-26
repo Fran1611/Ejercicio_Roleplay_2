@@ -39,7 +39,6 @@ namespace Library.Test
         [Test]
         public void Health_IntOverCero_Health()
         {
-            daniel.Health = 100;
             int actual = daniel.Health;
             Assert.AreEqual(actual, 100);
         }
@@ -47,7 +46,7 @@ namespace Library.Test
         [Test]
         public void Health_IntLessThanCero_Cero()
         {
-            daniel.Health = -11;
+            daniel.ReceiveAttack(145);
             int actual = daniel.Health;
             Assert.AreEqual(actual, 0);
         }
@@ -55,7 +54,6 @@ namespace Library.Test
         [Test]
         public void ReceiveAttack_Damage_NewLife()
         {
-            daniel.Health = 100;
             daniel.ReceiveAttack(70);
             Assert.AreEqual(daniel.Health, 30);
         }
@@ -63,7 +61,7 @@ namespace Library.Test
         [Test]
         public void Cure_Life100()
         {
-            daniel.Health = 0;
+            daniel.ReceiveAttack(100);
             daniel.Cure();
             Assert.AreEqual(daniel.Health, 100);
         }
