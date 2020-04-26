@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using RoleplayGame;
-
+using System.Collections;
 namespace Library.Test
 {
     public class DwarfTest
@@ -122,6 +122,31 @@ namespace Library.Test
             int actual = enano.Health;
 
             Assert.AreEqual(expected,actual);
+        }
+
+        [Test]
+        // Verifica que el Dwarf se crea de forma correcta, es decir que sus valores de ataque, defensa, vida y nombre son correctos.
+        public void Create_a_Dwarf()
+        {
+            Dwarf enano = new Dwarf("Enano");
+            enano.Axe = new Axe();
+            enano.Shield = new Shield();
+            enano.Helmet = new Helmet();
+            ArrayList personaje = new ArrayList();
+            personaje.Add(enano.Name);
+            personaje.Add(enano.Health);
+            personaje.Add(enano.DefenseValue);
+            personaje.Add(enano.AttackValue);
+
+            ArrayList expected = new ArrayList();
+            expected.Add("Enano");
+            expected.Add(100);
+            expected.Add(32);
+            expected.Add(25);
+
+            Assert.AreEqual(personaje,expected);
+
+
         }
     }
 }
