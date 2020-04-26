@@ -39,7 +39,7 @@ namespace RoleplayGame
             {
                 return this.health;
             }
-            set
+            private set
             {
                 this.health = value < 0 ? 0 : value;
             }
