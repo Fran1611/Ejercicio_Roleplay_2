@@ -1,39 +1,26 @@
 using System;
+using RoleplayGame;
 using NUnit.Framework;
 
 namespace Library.Test
 {
     public class KnightTest
     {
-        RoleplayGame.Knight arthur;
+        Knight arthur;
 
         [SetUp]
         public void SetUp()
         {
-            arthur = new RoleplayGame.Knight("Arthur");
-        }
-
-        [Test]
-        public void Kight_Name_SouldReturnName()
-        {
-            Assert.AreEqual(arthur.Name, "Arthur");
-        }
-
-        [Test]
-        public void AttackValue_Element_ElementValue()
-        {
-            arthur.Sword = new RoleplayGame.Sword();
-            RoleplayGame.Sword actual = arthur.Sword;
-            Assert.AreEqual(actual.AttackValue, 25);
+            arthur = new Knight("Arthur");
         }
 
         [Test]
         public void DefenseValue_TwoElement_ElementValue()
         {
-            arthur.Shield = new RoleplayGame.Shield();
-            RoleplayGame.Shield actual1 = arthur.Shield;
-            arthur.Armor = new RoleplayGame.Armor();
-            RoleplayGame.Armor actual2 = arthur.Armor;
+            arthur.Shield = new Shield();
+            Shield actual1 = arthur.Shield;
+            arthur.Armor = new Armor();
+            Armor actual2 = arthur.Armor;
             Assert.AreEqual(arthur.DefenseValue, 39);
         }
 
