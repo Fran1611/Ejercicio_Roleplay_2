@@ -74,7 +74,54 @@ namespace Library.Test
             int actual = enano.Health;
 
             Assert.AreEqual(expected, actual);
+        }
+        // Verifica que la vida se cura completamente cuando el Dwarf tiene vida = 0.
+        [Test]
+        public void Cure_Test()
+        {
+            Dwarf enano = new Dwarf("Enano");
+            enano.Axe = new Axe();
+            enano.Shield = new Shield();
+            enano.Helmet = new Helmet();
 
+            Wizard mago = new Wizard("Mago Negro");
+            mago.Staff = new Staff();
+            SpellsBook book = new SpellsBook();
+            Spell[] hechizos = new Spell[1];
+            Spell hechizo = new Spell();
+            hechizos[0] = hechizo;
+            book.Spells = hechizos;
+            mago.SpellsBook = book;
+            
+            enano.ReceiveAttack(mago.AttackValue);
+            enano.Cure();
+
+            int actual = enano.Health;
+            int expected = 100;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        // Verifica que la vida se cura completamente cuando 100 > vida > 0.
+        [Test]
+        public void Cure_Test2()
+        {
+            Dwarf enano = new Dwarf("Enano");
+            enano.Axe = new Axe();
+            enano.Shield = new Shield();
+            enano.Helmet = new Helmet();
+
+            Archer arquero = new Archer("Arquero");
+            arquero.Bow = new Bow();
+            arquero.Helmet = new Helmet();
+
+            enano.ReceiveAttack(arquero.AttackValue);
+            enano.Cure();
+
+            int expected = 100;
+            int actual = enano.Health;
+
+            Assert.AreEqual(expected,actual);
         }
     }
 }
