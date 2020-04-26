@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using RoleplayGame;
 
 namespace Library.Test
 {
@@ -13,7 +14,7 @@ namespace Library.Test
         [Test]
         public void BowAttackValue_ExpectedValue()
         {   
-            RoleplayGame.Bow bow = new RoleplayGame.Bow();
+            Bow bow = new Bow();
             int bowAttack = bow.AttackValue;
             int expected = 15;
             Assert.AreEqual(expected,bowAttack);

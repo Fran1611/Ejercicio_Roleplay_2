@@ -1,4 +1,5 @@
 using System;
+using RoleplayGame;
 using NUnit.Framework; 
 
 namespace Library.Test
@@ -6,12 +7,12 @@ namespace Library.Test
     public class ArcherTest
     {
 
-        RoleplayGame.Archer daniel;
+        Archer daniel;
 
         [SetUp]
         public void Setup()
         {
-            daniel = new RoleplayGame.Archer("Daniel");
+            daniel = new Archer("Daniel");
         }
 
         [Test]
@@ -23,16 +24,16 @@ namespace Library.Test
         [Test]
         public void AttackValue_Element_ElementValue()
         {
-            daniel.Bow = new RoleplayGame.Bow();
-            RoleplayGame.Bow actual = daniel.Bow;
+            daniel.Bow = new Bow();
+            Bow actual = daniel.Bow;
             Assert.AreEqual(actual.AttackValue, 15);
         }
 
         [Test]
         public void DefenseValue_Element_ElementValue()
         {
-            daniel.Helmet = new RoleplayGame.Helmet();
-            RoleplayGame.Helmet actual = daniel.Helmet;
+            daniel.Helmet = new Helmet();
+            Helmet actual = daniel.Helmet;
             Assert.AreEqual(actual.DefenseValue, 18);
         }
 

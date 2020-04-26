@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using RoleplayGame;
 
 namespace Library.Test
 {
@@ -12,7 +13,7 @@ namespace Library.Test
         [Test]
         public void HemletDefenseValue_ExpectedValue()
         {
-            RoleplayGame.Helmet helmet = new RoleplayGame.Helmet();
+            Helmet helmet = new Helmet();
             int expected = 18;
             Assert.AreEqual(expected,helmet.DefenseValue);
 

@@ -1,5 +1,5 @@
 using NUnit.Framework;
-
+using RoleplayGame;
 namespace Library.Test
 {
     public class SwordTest
@@ -13,7 +13,7 @@ namespace Library.Test
          [Test]
         public void SwordAttackValue_ExpectedValue()
         {   
-            RoleplayGame.Sword sword = new RoleplayGame.Sword();
+            Sword sword = new Sword();
             int swordAttack = sword.AttackValue;
             int expected = 25;
             Assert.AreEqual(expected,swordAttack);

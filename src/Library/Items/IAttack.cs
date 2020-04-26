@@ -6,9 +6,6 @@ namespace RoleplayGame
     Cumple además con LSP ya que el código funciona de igual manera cuando el objeto es subtipo de IDefense.*/
     public interface IAttack
     {
-        int AttackValue
-        {
-            get;
-        }
+        int AttackValue{get;}
     }
 }
