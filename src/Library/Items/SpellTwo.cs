@@ -1,14 +1,14 @@
 namespace RoleplayGame
 {
 
-    public class Spell : ISpells
+    public class SpellTwo : ISpells
 
     {
         public int AttackValue
         {
             get
             {
-                return 70;
+                return 100;
             }
         }
 
@@ -16,7 +16,7 @@ namespace RoleplayGame
         {
             get
             {
-                return 70;
+                return 50;
             }
         }
     }

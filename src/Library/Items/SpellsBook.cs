@@ -3,17 +3,17 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
 
-    public class SpellsBook :IDefense, IAttack
+    public class SpellsBook
 
     {
-        public Spell[] Spells { get; set; }
+        public ISpells[] Spells { get; set; }
         
         public int AttackValue
         {
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (ISpells spell in this.Spells)
                 {
                     value += spell.AttackValue;
                 }
@@ -26,7 +26,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (ISpells spell in this.Spells)
                 {
                     value += spell.DefenseValue;
                 }
