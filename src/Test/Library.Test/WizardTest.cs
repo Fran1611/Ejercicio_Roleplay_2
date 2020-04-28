@@ -8,40 +8,23 @@ namespace Library.Test
     {
 
         Wizard mago;
+
         ISpells[] hechizos = new ISpells[] {new Spell()};
         SpellsBook libroDeHechizos = new SpellsBook();
 
         Staff staff = new Staff();
 
-
         [SetUp]
         public void Setup()
         {
             mago = new Wizard("Juan");
-           
+
+            ISpells[] hechizos = new ISpells[]{new Spell()};
+
             libroDeHechizos.Spells=hechizos;
-
             mago.SpellsBook=libroDeHechizos;
-            mago.Staff = staff;
-        }
+            mago.Staff=staff;
 
-        [Test]
-        public void TestGetSpellsBook()
-        { 
-            SpellsBook esperado = this.libroDeHechizos;
-            Assert.AreEqual(esperado, mago.SpellsBook);
-        }
-
-        [Test]
-        public void TestsetSpellsBook()
-        {
-            ISpells[] hechizos2 = new ISpells[] {new Spell()};
-            SpellsBook esperado = new SpellsBook();
-            esperado.Spells = hechizos2;
-
-            mago.SpellsBook = esperado;
-
-            Assert.AreEqual(esperado, mago.SpellsBook);
         }
 
         [Test]
@@ -51,7 +34,16 @@ namespace Library.Test
             Assert.AreEqual(esperado, mago.AttackValue);
         }
 
-  
+        [Test]
+        public void TestAttackValue_2Hechizos()
+        {
+            ISpells[] hechizos = new ISpells[]{new Spell(), new SpellTwo()};
+            libroDeHechizos.Spells = hechizos;
+            mago.SpellsBook=libroDeHechizos;
+
+            int esperado = 270;
+            Assert.AreEqual(esperado, mago.AttackValue);
+        }
 
         [Test]
         public void TestDefenseValue_1Hechizo()
@@ -60,6 +52,16 @@ namespace Library.Test
             Assert.AreEqual(esperado, mago.DefenseValue);
         }
 
+        [Test]
+        public void TestDefenseValue_2Hechizos()
+        {
+            ISpells[] hechizos = new ISpells[]{new Spell(), new SpellTwo()};
+            libroDeHechizos.Spells=hechizos;
+            mago.SpellsBook=libroDeHechizos;
+
+            int esperado = 220;
+            Assert.AreEqual(esperado, mago.DefenseValue);
+        }
 
         [Test]
         public void TestHealth_AntesDeAtacar()
@@ -67,7 +69,6 @@ namespace Library.Test
             int esperado = 100;
             Assert.AreEqual(esperado, mago.Health);
         }
-
         
         [Test]
         public void TestHealth_despuesDeAtaque25()
