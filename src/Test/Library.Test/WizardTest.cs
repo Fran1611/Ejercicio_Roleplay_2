@@ -8,8 +8,10 @@ namespace Library.Test
     {
 
         Wizard mago;
-        ISpells[] hechizos;
+
+        ISpells[] hechizos = new ISpells[] {new Spell()};
         SpellsBook libroDeHechizos = new SpellsBook();
+
         Staff staff = new Staff();
 
         [SetUp]
@@ -18,9 +20,11 @@ namespace Library.Test
             mago = new Wizard("Juan");
 
             ISpells[] hechizos = new ISpells[]{new Spell()};
+
             libroDeHechizos.Spells=hechizos;
             mago.SpellsBook=libroDeHechizos;
             mago.Staff=staff;
+
         }
 
         [Test]
