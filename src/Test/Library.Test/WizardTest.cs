@@ -51,18 +51,7 @@ namespace Library.Test
             Assert.AreEqual(esperado, mago.AttackValue);
         }
 
-        [Test]
-        public void TestAttackValue_2Hechizos()
-        {
-            Spell hechizo1 = new Spell();
-            SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new ISpells[1];
-            hechizos[0]=hechizo1;
-            hechizos[1]=hechizo2;
-
-            int esperado = 270;
-            Assert.AreEqual(esperado, libroDeHechizos.AttackValue);
-        }
+  
 
         [Test]
         public void TestDefenseValue_1Hechizo()
@@ -71,17 +60,6 @@ namespace Library.Test
             Assert.AreEqual(esperado, mago.DefenseValue);
         }
 
-        [Test]
-        public void TestDefenseValue_2Hechizos()
-        {
-            Spell hechizo1 = new Spell();
-            SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new ISpells[1];
-            hechizos[0]=hechizo1;
-            hechizos[1]=hechizo2;
-
-            Assert.AreEqual(220, libroDeHechizos.DefenseValue);
-        }
 
         [Test]
         public void TestHealth_AntesDeAtacar()
