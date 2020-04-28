@@ -8,7 +8,7 @@ namespace Library.Test
     {
 
         Wizard mago;
-        ISpells[] hechizos;
+        ISpells[] hechizos = new ISpells[] {new Spell()};
         SpellsBook libroDeHechizos = new SpellsBook();
 
         Staff staff = new Staff();
@@ -18,9 +18,6 @@ namespace Library.Test
         public void Setup()
         {
             mago = new Wizard("Juan");
-            Spell hechizo1 = new Spell();
-            hechizos = new Spell[1];
-            hechizos[0]=hechizo1;
             libroDeHechizos.Spells=hechizos;
 
             mago.SpellsBook=libroDeHechizos;
@@ -39,7 +36,7 @@ namespace Library.Test
         {
             SpellsBook esperado = new SpellsBook();
 
-            ISpells[] hechizos2 = new Spell[3];
+            ISpells[] hechizos2 = new ISpells[] {new Spell()};
 
             Spell hechizo1 = new Spell();
             SpellTwo hechizo2 = new SpellTwo();
@@ -67,7 +64,7 @@ namespace Library.Test
         {
             Spell hechizo1 = new Spell();
             SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new Spell[2];
+            hechizos = new Spell[1];
             hechizos[0]=hechizo1;
             hechizos[1]=hechizo2;
             libroDeHechizos.Spells=hechizos;
@@ -89,7 +86,7 @@ namespace Library.Test
         {
             Spell hechizo1 = new Spell();
             SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new Spell[2];
+            hechizos = new Spell[1];
             hechizos[0]=hechizo1;
             hechizos[1]=hechizo2;
             libroDeHechizos.Spells=hechizos;
