@@ -18,6 +18,7 @@ namespace Library.Test
         public void Setup()
         {
             mago = new Wizard("Juan");
+           
             libroDeHechizos.Spells=hechizos;
 
             mago.SpellsBook=libroDeHechizos;
@@ -26,7 +27,7 @@ namespace Library.Test
 
         [Test]
         public void TestGetSpellsBook()
-        {
+        { 
             SpellsBook esperado = this.libroDeHechizos;
             Assert.AreEqual(esperado, mago.SpellsBook);
         }
@@ -34,17 +35,8 @@ namespace Library.Test
         [Test]
         public void TestsetSpellsBook()
         {
-            SpellsBook esperado = new SpellsBook();
-
             ISpells[] hechizos2 = new ISpells[] {new Spell()};
-
-            Spell hechizo1 = new Spell();
-            SpellTwo hechizo2 = new SpellTwo();
-           
-
-            hechizos2[0]=hechizo1;
-            hechizos2[1]=hechizo2;
-
+            SpellsBook esperado = new SpellsBook();
             esperado.Spells = hechizos2;
 
             mago.SpellsBook = esperado;
@@ -64,14 +56,12 @@ namespace Library.Test
         {
             Spell hechizo1 = new Spell();
             SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new Spell[1];
+            hechizos = new ISpells[1];
             hechizos[0]=hechizo1;
             hechizos[1]=hechizo2;
-            libroDeHechizos.Spells=hechizos;
-            mago.SpellsBook=libroDeHechizos;
 
             int esperado = 270;
-            Assert.AreEqual(esperado, mago.AttackValue);
+            Assert.AreEqual(esperado, libroDeHechizos.AttackValue);
         }
 
         [Test]
@@ -86,14 +76,11 @@ namespace Library.Test
         {
             Spell hechizo1 = new Spell();
             SpellTwo hechizo2 = new SpellTwo();
-            hechizos = new Spell[1];
+            hechizos = new ISpells[1];
             hechizos[0]=hechizo1;
             hechizos[1]=hechizo2;
-            libroDeHechizos.Spells=hechizos;
-            mago.SpellsBook=libroDeHechizos;
 
-            int esperado = 220;
-            Assert.AreEqual(esperado, mago.DefenseValue);
+            Assert.AreEqual(220, libroDeHechizos.DefenseValue);
         }
 
         [Test]
